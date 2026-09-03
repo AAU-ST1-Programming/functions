@@ -1,4 +1,6 @@
-# Functoins
+# Functions
+
+![files/shared_overview_table.png](files/shared_overview_table.png)
 
 - **PowerPoint slideshow**: `functions.pptx`
 - **Questions:** – `functions_questions.docx` Indeholder spørgsmål som i får i forbindelsen med forlæsningen.
