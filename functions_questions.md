@@ -281,8 +281,8 @@ Martin wants to calculate statistics for multiple patients. *"I need mean and st
 **The Task:**
 
 1. Write function `printStatistics(char* measurement, float gennemsnit, float afvigelse)` - it should print measurement, mean, and std
-2. Write function `float mean(float x[], int n)` - calculates mean μ = (∑ₜ₌₀ⁿ⁻¹ xₜ) / N
-3. Write function `float std(float x[], int n)` - calculates std σ = √(∑ₜ₌₀ⁿ⁻¹ (xₜ - μ)² / (N - 1))
+2. Write function `float mean(float x[], int n)` - calculates mean $\mu = \frac{1}{N} \sum\_{t=0}^{n-1} x_t$
+3. Write function `float std(float x[], int n)` - calculates std $\sigma = \sqrt{\frac{1}{N-1} \sum\_{t=0}^{n-1} (x_t - \mu)^2}$
 4. Write and use `printStatistics` function
 
 Starting code:
@@ -302,8 +302,8 @@ int main() {
 
 **Hints:**
 - You've made these equations before
-- Mean: μ = (∑xₜ) / N
-- Std: σ = √(∑(xₜ - μ)² / (N - 1))
+- Mean: $\mu = \frac{1}{N} \sum x_t$
+- Std: $\sigma = \sqrt{\frac{1}{N-1} \sum (x_t - \mu)^2}$
 - Need to include `<math.h>` for `sqrt()`
 
 **What you must never do:**
