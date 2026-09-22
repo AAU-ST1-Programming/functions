@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 
+tasks.json
 # Compiled Object files
 *.slo
 *.lo
