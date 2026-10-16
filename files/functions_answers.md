@@ -1,51 +1,51 @@
-# Functions - Answers
+# Funktioner - Svar
 
-*Note: Code solutions are provided in the `files/solution/` directory. This file contains explanations, PBL answers, and references to the solution files.*
-
----
-
-## Answer: Functions 1 - Code Readability
-
-**Solution file:** `files/solution/functions1_with_comments.c` (and `functions1_with_functions.c`)
-
-**Answers:**
-- What helps make code more readable without changing functionality:
-  - **Meaningful variable names**: Replace cryptic names like `x`, `y`, `a` with descriptive names like `values_above_element`, `element_count`, etc.
-  - **Comments**: Add comments to explain non-obvious code logic, complex algorithms, or business rules
-  - **Consistent indentation**: Use consistent spacing and indentation throughout
-  - **Proper spacing**: Add spaces around operators and after commas for better readability
-
-**PBL Answer:**
-Meaningful variable names are important because:
-1. **Self-documenting code**: Variables with good names explain what they represent without needing comments
-2. **Maintainability**: When you or others revisit the code later, it's much easier to understand
-3. **Debugging**: Clear names make it easier to identify what each variable does when tracking down bugs
-4. **Collaboration**: Team members can understand your code more quickly
-5. **Reduced errors**: Misleading names can cause misunderstanding and lead to bugs
-
-Example: `N(211)=15` becomes much clearer when you know `N` means "count" and the parameters are meaningful.
+*Bemærk: Kodeløsningerne ligger i mappen `files/solution/`. Denne fil indeholder forklaringer, PBL-svar og henvisninger til løsningsfilerne.*
 
 ---
 
-## Answer: Functions 2 - BMI Calculation Function
+## Svar: Funktioner 1 - Kodens læsbarhed
 
-**Solution file:** `files/solution/functions2_sol.c`
+**Løsningsfil:** `files/solution/functions1_with_comments.c` (og `functions1_with_functions.c`)
 
-**Expected Output:**
+**Svar:**
+Det gør koden mere læsbar uden at ændre funktionaliteten:
+- **Meningsfulde variabelnavne:** Erstat kryptiske navne som `x`, `y` og `a` med beskrivende navne som `values_above_element`, `element_count` osv.
+- **Kommentarer:** Tilføj kommentarer, der forklarer logik, som ikke er indlysende, komplekse algoritmer eller forretningsregler
+- **Ensartet indrykning:** Brug den samme indrykning og afstand i hele koden
+- **Fornuftig brug af mellemrum:** Sæt mellemrum omkring operatorer og efter kommaer
+
+**PBL-svar:**
+Meningsfulde variabelnavne er vigtige, fordi:
+1. **Selvdokumenterende kode:** Variabler med gode navne forklarer, hvad de repræsenterer, uden at der er brug for kommentarer
+2. **Vedligeholdelse:** Når du eller andre vender tilbage til koden senere, er den meget lettere at forstå
+3. **Debugging:** Klare navne gør det lettere at se, hvad hver variabel gør, når man leder efter fejl
+4. **Samarbejde:** Holdkammerater kan hurtigere forstå din kode
+5. **Færre fejl:** Misvisende navne kan føre til misforståelser og dermed fejl
+
+Eksempel: `N(211)=15` bliver meget tydeligere, når man ved, at `N` betyder "antal", og parametrene har meningsfulde navne.
+
+---
+
+## Svar: Funktioner 2 - Funktion til BMI-beregning
+
+**Løsningsfil:** `files/solution/functions2_sol.c`
+
+**Forventet output:**
 ```
-BMI: 1835.75
+BMI=18.12
 ```
-(For weight = 31.1, height = 1.31)
+(For weight = 31.1, height = 1.31. Løsningsfilen bruger height = 1.8 og weight = 63.0 og udskriver derfor `BMI=19.44`.)
 
-**PBL Answer:**
-Modified function to also print BMI category:
+**PBL-svar:**
+Ændret funktion, der også udskriver BMI-kategorien:
 ```c
 #include <stdio.h>
 
-float calculateBMI(float weight, float height) {
+float calculateBMI(float height, float weight) {
     float bmi = weight / (height * height);
     
-    // Print category
+    // Udskriv kategori
     if (bmi < 18.5) {
         printf("Category: Underweight\n");
     } else if (bmi >= 18.5 && bmi < 25.0) {
@@ -62,29 +62,29 @@ float calculateBMI(float weight, float height) {
 int main() {
     float weight = 31.1;
     float height = 1.31;
-    float bmi = calculateBMI(weight, height);
-    printf("BMI: %.2f\n", bmi);
+    float bmi = calculateBMI(height, weight);
+    printf("BMI=%.2f\n", bmi);
     return 0;
 }
 ```
 
 ---
 
-## Answer: Functions 3 - Print Value with Pointer
+## Svar: Funktioner 3 - Udskriv værdi med pointer
 
-**Solution file:** `files/solution/functions3_sol.c`
+**Løsningsfil:** `files/solution/functions3_sol.c`
 
-**Expected Output:**
+**Svar:**
+- Hvilken information sendes til `printValue`? **Hukommelsesadressen** på variablen `value` (en pointer til en int)
+
+**Forventet output:**
 ```
 address: 0x7ffd42a1b3ac, value: 101
 ```
-*(Address will vary each run)*
+*(Adressen er forskellig fra kørsel til kørsel)*
 
-**Answers:**
-- What information is passed to `printValue`? The **memory address** of the variable `value` (a pointer to an int)
-
-**PBL Answer:**
-Modified to print pointer size:
+**PBL-svar:**
+Ændret, så pointerens størrelse også udskrives:
 ```c
 #include <stdio.h>
 
@@ -99,15 +99,15 @@ int main() {
     return 0;
 }
 ```
-Output will show the pointer size (typically 4 bytes on 32-bit systems, 8 bytes on 64-bit systems).
+Outputtet viser pointerens størrelse (typisk 4 bytes på 32-bit systemer og 8 bytes på 64-bit systemer).
 
 ---
 
-## Answer: Patient 1 - Print Function (Call-by-Value)
+## Svar: Patient 1 - Udskrivningsfunktion (call-by-value)
 
-**Solution file:** `files/solution/patient1_sol.c`
+**Løsningsfil:** `files/solution/patient1_sol.c`
 
-**Expected Output:**
+**Forventet output:**
 ```
 Patient Information:
 ###
@@ -117,8 +117,8 @@ Patient Information:
  height:	1.80 m
 ```
 
-**PBL Answer:**
-Complete function with all parameters:
+**PBL-svar:**
+Den færdige funktion med alle parametre:
 ```c
 #include <stdio.h>
 
@@ -143,11 +143,11 @@ int main() {
 
 ---
 
-## Answer: Patient 2 - Multiple Patients with BMI
+## Svar: Patient 2 - Flere patienter med BMI
 
-**Solution file:** `files/solution/patient2_sol.c`
+**Løsningsfil:** `files/solution/patient2_sol.c`
 
-**Expected Output:**
+**Forventet output:**
 ```
 Patient Information for 4 patients
 ###
@@ -155,22 +155,33 @@ Patient Information for 4 patients
  age:		13 years
  weight:	80.0 kg
  height:	1.80 m
- BMI:		24.69
+ BMI:		24.7
 ###
  PatientID:	3
  age:		44 years
  weight:	99.0 kg
  height:	1.62 m
- BMI:		37.87
-... (for all 4 patients)
+ BMI:		37.7
+###
+ PatientID:	52
+ age:		51 years
+ weight:	100.0 kg
+ height:	1.30 m
+ BMI:		59.2
+###
+ PatientID:	23
+ age:		100 years
+ weight:	50.0 kg
+ height:	1.74 m
+ BMI:		16.5
 ```
 
-**PBL Answer:**
-Add BMI category printing:
+**PBL-svar:**
+Tilføj udskrivning af BMI-kategorien:
 ```c
 #include <stdio.h>
 
-float calculateBMI(float weight, float height) {
+float calculateBMI(float height, float weight) {
     return weight / (height * height);
 }
 
@@ -193,10 +204,10 @@ int main() {
     
     for (int i = 0; i < number_of_patients; i++) {
         printPatientInfo(ids[i], ages[i], weights[i], heights[i]);
-        float bmi = calculateBMI(weights[i], heights[i]);
+        float bmi = calculateBMI(heights[i], weights[i]);
         printf(" BMI:\t\t%.1f\n", bmi);
         
-        // Print BMI category
+        // Udskriv BMI-kategori
         if (bmi < 18.5) {
             printf(" Category:\tUnderweight\n");
         } else if (bmi < 25.0) {
@@ -213,11 +224,11 @@ int main() {
 
 ---
 
-## Answer: Records Display - Call-by-Reference
+## Svar: Records - Udskrivning med call-by-reference
 
-**Solution file:** `files/solution/records_display_sol.c`
+**Løsningsfil:** `files/solution/records_display_sol.c`
 
-**Expected Output:**
+**Forventet output:**
 ```
 date: Fri Jul 17 10:23:00 2020
 ID: 131
@@ -225,8 +236,8 @@ notes: Measurement recorded without issues
 measurement: 93.30
 ```
 
-**PBL Answer:**
-Extended to print multiple records:
+**PBL-svar:**
+Udvidet, så det udskriver flere records:
 ```c
 #include <stdio.h>
 #include <time.h>
@@ -264,21 +275,21 @@ int main() {
 
 ---
 
-## Answer: Patient 3 - Statistics Functions
+## Svar: Patient 3 - Statistikfunktioner
 
-**Solution file:** `files/solution/patient3_sol.c`
+**Løsningsfil:** `files/solution/patient3_sol.c`
 
-**Expected Output:**
+**Forventet output:**
 ```
 Patient Descriptives for 4 Patients
-Age: mean = 52.00, std = 36.66
-Weight: mean = 82.25, std = 21.80
-Height: mean = 1.62, std = 0.21
+Age: mean = 52.00, std = 36.01
+Weight: mean = 82.25, std = 23.39
+Height: mean = 1.62, std = 0.22
 ```
-*(Exact values may vary based on implementation)*
+*(Løsningsfilen udskriver i formatet `Age (Years): 52.00(36.01)`)*
 
-**PBL Answer:**
-Calculate all statistics in one loop:
+**PBL-svar:**
+Beregn og udskriv statistikken for alle tre målinger i ét loop:
 ```c
 #include <stdio.h>
 #include <math.h>
@@ -305,17 +316,20 @@ float std(float x[], int n) {
 }
 
 int main() {
-    int ages[] = {13, 44, 51, 100};
+    // ages er float (ikke int), så samme mean()- og std()-funktioner kan bruges til alle målinger
+    float ages[] = {13, 44, 51, 100};
     float weights[] = {80, 99, 100, 50};
     float heights[] = {1.80, 1.62, 1.30, 1.74};
+    float *measurements[] = {ages, weights, heights};
+    char *names[] = {"Age", "Weight", "Height"};
     int number_of_patients = sizeof(ages) / sizeof(ages[0]);
     
     printf("Patient Descriptives for %i Patients\n", number_of_patients);
     
-    // Calculate and print statistics for all three measurements
-    printStatistics("Age", mean_int(ages, number_of_patients), std_int(ages, number_of_patients));
-    printStatistics("Weight", mean(weights, number_of_patients), std(weights, number_of_patients));
-    printStatistics("Height", mean(heights, number_of_patients), std(heights, number_of_patients));
+    // Beregn og udskriv statistik for alle tre målinger i ét loop
+    for (int i = 0; i < 3; i++) {
+        printStatistics(names[i], mean(measurements[i], number_of_patients), std(measurements[i], number_of_patients));
+    }
     
     return 0;
 }
@@ -323,14 +337,13 @@ int main() {
 
 ---
 
-## File References
+## Filhenvisninger
 
-All answer files are located in: `files/solution/`
-
-- Functions 1 - Code Readability: `functions1_with_comments.c` and `functions1_with_functions.c`
-- Functions 2 - BMI Calculation: `functions2_sol.c`
-- Functions 3 - Print Value with Pointer: `functions3_sol.c`
-- Patient 1 - Print Function: `patient1_sol.c`
-- Patient 2 - Multiple Patients with BMI: `patient2_sol.c`
-- Records Display - Call-by-Reference: `records_display_sol.c`
-- Patient 3 - Statistics Functions: `patient3_sol.c`
+Alle løsningsfiler ligger i `files/solution/`:
+- Funktioner 1 - Kodens læsbarhed: `functions1_with_comments.c` og `functions1_with_functions.c`
+- Funktioner 2 - Funktion til BMI-beregning: `functions2_sol.c`
+- Funktioner 3 - Udskriv værdi med pointer: `functions3_sol.c`
+- Patient 1 - Udskrivningsfunktion: `patient1_sol.c`
+- Patient 2 - Flere patienter med BMI: `patient2_sol.c`
+- Records - Udskrivning med call-by-reference: `records_display_sol.c`
+- Patient 3 - Statistikfunktioner: `patient3_sol.c`

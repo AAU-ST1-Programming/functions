@@ -1,140 +1,125 @@
-# Functions - Questions
+# Funktioner - Spørgsmål
 
 ---
 
-## Question: Functions 1 - Code Readability
+## Spørgsmål: Funktioner 1 - Kodens læsbarhed
 
-**Short Humorous Scenario:**
-Martin har seen some code that works but is hard til read. *"This function1.c program prints element counts, but it's so hard til understand! What would help make this more readable? The code must not change functionality."* han spørger.
+**Scenarie:**
+Martin har set noget kode, der virker, men som er svær at læse. *"Programmet functions1.c udskriver antal elementer, men det er så svært at forstå! Hvad ville gøre det mere læsbart? Koden må ikke ændre funktionalitet."* siger han.
 
-**Hvad de allerede ved:**
-- Comments in C: `//` og `/* */`
-- Variabel naming conventions
-- Funktion structure
-- `printf` formatting
+**Hvad du allerede ved:**
+- Kommentarer i C: `//` og `/* */`
+- Navngivningskonventioner for variabler
+- Funktioners opbygning
+- Formatering med `printf`
 
 **Opgaven:**
 
-Given the program output:
+Programmets output er:
 ```
 N(211)=15
 N(93)=9
 ```
 
-1. Examine the code in `functions1.c`
-2. Identify what would improve readability
-3. Answer: What helps make code more readable without changing functionality?
+1. Undersøg koden i `functions1.c`
+2. Find ud af, hvad der ville forbedre læsbarheden
+3. Besvar: Hvad gør koden mere læsbar uden at ændre dens funktionalitet?
 
-4. **PBL:** Martin spørger: *"Kan you explain why meaningful variable names are important in programming?"*
+4. **PBL:** Martin spørger: *"Kan du forklare, hvorfor meningsfulde variabelnavne er vigtige i programmering?"*
 
 **Hint:**
-- Meaningful variable names (e.g., `values_above_element` instead of `x`)
-- Comments explaining non-obvious code
-- Consistent indentation
-- Proper spacing
-- Se the code in `functions1.c`
-
-**Hvad du aldrig må gøre:**
-- Change the program's functionality
-- Remove necessary code
-- Alter the logic
+- Meningsfulde variabelnavne (f.eks. `values_above_element` i stedet for `x`)
+- Kommentarer, der forklarer kode, som ikke er indlysende
+- Ensartet indrykning
+- Fornuftig brug af mellemrum
+- Se koden i `functions1.c`
 
 ---
 
-## Question: Functions 2 - BMI Calculation Function
+## Spørgsmål: Funktioner 2 - Funktion til BMI-beregning
 
-**Short Humorous Scenario:**
-Martin ønsker at calculate BMI but doesn't want the formula in main(). *"Jeg skal a function that calculates BMI. Kan you make one?"* han spørger. *"It should take weight og height, og return the BMI."*
+**Scenarie:**
+Martin vil gerne beregne BMI, men han vil ikke have formlen stående i `main()`. *"Jeg har brug for en funktion, der beregner BMI. Kan du lave en?"* spørger han. *"Den skal tage vægt og højde og returnere BMI."*
 
-**Hvad de allerede ved:**
-- Funktion definition og declaration
-- Funktion parameters
-- Returner values
-- BMI formula: `bmi = weight / (height * height)`
+**Hvad du allerede ved:**
+- Funktionsdefinition og -deklaration
+- Funktionsparametre
+- Returværdier
+- BMI-formlen: `bmi = weight / (height * height)`
 
 **Opgaven:**
 
-1. Definer variables `weight = 31.1` og `height = 1.31` i `main()`
-2. Definer function `float calculateBMI(...)` over `int main()`
-3. In the `calculateBMI` function:
-   - Implement the BMI algorithm
-   - Returner the BMI value
-4. In `main`, call `calculateBMI` with `height` og `weight` as input parameters
-5. Gem the returned value in a `float bmi` variable
-6. Udskriv the result
+1. Definer variablerne `weight = 31.1` og `height = 1.31` i `main()`
+2. Definer funktionen `float calculateBMI(...)` over `int main()`
+3. I funktionen `calculateBMI`:
+   - Implementer BMI-algoritmen
+   - Returner BMI-værdien
+4. Kald `calculateBMI` i `main` med `height` og `weight` som inputparametre
+5. Gem den returnerede værdi i en `float bmi`-variabel
+6. Udskriv resultatet
 
-7. **PBL:** Martin spørger: *"Kan you modify this function til also print a category (Underweight, Normal, Overweight, Obese) based on the BMI?"*
+7. **PBL:** Martin spørger: *"Kan du ændre funktionen, så den også udskriver en kategori (Underweight, Normal, Overweight, Obese) ud fra BMI?"*
 
 **Hint:**
-- What datatypes should input parameters be? `float` for both
-- What should the return type be? `float`
-- Funktion signature: `float calculateBMI(float weight, float height)`
-- Call: `float bmi = calculateBMI(height, weight);`
-- BMI categories: Underweight < 18.5, Normal 18.5-24.9, Overweight 25-29.9, Obese >= 30
-
-**Hvad du aldrig må gøre:**
-- Change the BMI calculation formula
-- Glem til declare function before use
-- Brug wrong datatypes for parameters
+- Hvilke datatyper skal inputparametrene have? `float` til begge
+- Hvilken returtype skal funktionen have? `float`
+- Funktionssignatur: `float calculateBMI(float height, float weight)`
+- Kald: `float bmi = calculateBMI(height, weight);`
+- BMI-kategorier: Underweight < 18.5, Normal 18.5-24.9, Overweight 25-29.9, Obese >= 30
 
 ---
 
-## Question: Functions 3 - Udskriv Value with Pointer
+## Spørgsmål: Funktioner 3 - Udskriv værdi med pointer
 
-**Short Humorous Scenario:**
-Martin ønsker at print a variable's memory address og value. *"Jeg skal a function that takes a pointer til an int og prints the address og value. Kan you make this?"* han spørger.
+**Scenarie:**
+Martin vil gerne udskrive en variabels hukommelsesadresse og værdi. *"Jeg har brug for en funktion, der tager en pointer til en int og udskriver adressen og værdien. Kan du lave den?"* spørger han.
 
-**Hvad de allerede ved:**
+**Hvad du allerede ved:**
 - Pointers
-- Funktion parameters (pointer types)
-- Address-of operator `&`
-- Dereference operator `*`
-- Format specifier `%p` for addresses
+- Funktionsparametre (pointer-typer)
+- Adresseoperatoren `&`
+- Dereference-operatoren `*`
+- Format specifieren `%p` til adresser
 
 **Opgaven:**
 
-1. Definer variable `int value = 101;` in `main`
-2. Definer function `void printValue(int *pval)` above `main`
-3. In `printValue` function:
-   - Implement the print function til show: `address: 0xF213d23, value: 101`
-4. Kald `printValue(&value)` from `main`
-5. What information is passed til `printValue`?
-6. Kør program
+1. Definer variablen `int value = 101;` i `main`
+2. Definer funktionen `void printValue(int *pval)` over `main`
+3. I funktionen `printValue`:
+   - Implementer udskrivningen, så den viser: `address: 0xF213d23, value: 101`
+4. Kald `printValue(&value)` fra `main`
+5. Hvilken information bliver sendt til `printValue`?
+6. Kør programmet
 
-7. **PBL:** Martin spørger: *"Kan you modify this til also print the size of the pointer in bytes?"*
+7. **PBL:** Martin spørger: *"Kan du ændre det, så det også udskriver pointerens størrelse i bytes?"*
 
 **Hint:**
-- Hvordan til print a memory address: use `%p` format specifier
-- Hvordan til dereference a pointer: use `*` (e.g., `*pval`)
-- Pass address using `&`: `printValue(&value)`
-- The information passed is the memory address (pointer value)
-
-**Hvad du aldrig må gøre:**
-- Pass the value instead of the address
-- Glem til dereference in the function
-- Brug wrong format specifier for address
+- Sådan udskriver du en hukommelsesadresse: brug format specifieren `%p`
+- Sådan dereferencer du en pointer: brug `*` (f.eks. `*pval`)
+- Send adressen med `&`: `printValue(&value)`
+- Informationen, der sendes, er hukommelsesadressen (pointerens værdi)
 
 ---
 
-## Question: Patient 1 - Udskriv Funktion (Call-by-Value)
+## Spørgsmål: Patient 1 - Udskrivningsfunktion (call-by-value)
 
-**Short Humorous Scenario:**
-Martin ønsker at organize his patient printing code. *"Jeg har patient information til print, but it's all in main(). Kan you make a function til handle this?"* han spørger.
+**Scenarie:**
+Martin vil gerne organisere sin kode, der udskriver patientoplysninger. *"Jeg har patientoplysninger, der skal udskrives, men det hele står i main(). Kan du lave en funktion, der klarer det?"* spørger han.
 
-**Hvad de allerede ved:**
-- Funktion definition og declaration
-- Funktion parameters (call-by-value)
-- `printf` function
-- Multiple parameters
+**Hvad du allerede ved:**
+- Funktionsdefinition og -deklaration
+- Funktionsparametre (call-by-value)
+- `printf`-funktionen
+- Flere parametre
 
 **Opgaven:**
 
-1. Definer en function declaration og definition `printPatientInfo(...)`
-2. Start slowly with 1 single parameter: `id` (lines 11-12)
-3. Replace `printf` lines in `main` with `printPatientInfo` function calls
-4. Note: `int main` should not contain any `printf` calls
+1. Lav en funktionsdeklaration og -definition `printPatientInfo(...)`
+2. Start stille og roligt med én enkelt parameter: `id` (linje 11-12)
+3. Erstat `printf`-linjerne i `main` med kald til `printPatientInfo`
+4. Bemærk: `int main` må ikke indeholde nogen `printf`-kald
 
-Starting code:
+Startkode:
 ```c
 #include <stdio.h>
 int main() {
@@ -153,39 +138,34 @@ int main() {
 }
 ```
 
-5. **PBL:** Martin spørger: *"Kan you add all patient parameters til the function og remove all printf from main?"*
+5. **PBL:** Martin spørger: *"Kan du tilføje alle patientparametrene til funktionen og fjerne alle printf fra main?"*
 
 **Hint:**
-- Start med just `id` parameter first
-- Tilføj derefter `age`, `weight`, `height` én ad gangen
-- Funktion should contain all the printf statements
-- Call: `printPatientInfo(id, age, weight, height);`
-
-**Hvad du aldrig må gøre:**
-- Lad nogen printf være i main
-- Glem function declaration
-- Brug wrong parameter order
+- Start med kun `id`-parameteren
+- Tilføj derefter `age`, `weight` og `height` én ad gangen
+- Funktionen skal indeholde alle printf-statements
+- Kald: `printPatientInfo(id, age, weight, height);`
 
 ---
 
-## Question: Patient 2 - Multiple Patients with BMI
+## Spørgsmål: Patient 2 - Flere patienter med BMI
 
-**Short Humorous Scenario:**
-Martin ønsker at print multiple patients with BMI calculation. *"Jeg har an array of patients. Kan you use the print function og add BMI calculation?"* han spørger.
+**Scenarie:**
+Martin vil gerne udskrive flere patienter med BMI-beregning. *"Jeg har et array af patienter. Kan du bruge udskrivningsfunktionen og tilføje BMI-beregning?"* spørger han.
 
-**Hvad de allerede ved:**
+**Hvad du allerede ved:**
 - Arrays
-- Functions
+- Funktioner
 - Loops
-- BMI calculation
+- BMI-beregning
 
 **Opgaven:**
 
-1. Brug `printPatientInfo` code from `patient1.c`
-2. Lav a function `calculateBMI` that calculates `bmi = weight / (height * height)`
-3. Modify `printPatientInfo` til print BMI
+1. Brug `printPatientInfo`-koden fra `patient1.c`
+2. Lav en funktion `calculateBMI`, der beregner `bmi = weight / (height * height)`
+3. Ændr `printPatientInfo`, så den udskriver BMI
 
-Starting code:
+Startkode:
 ```c
 #include <stdio.h>
 int main() {
@@ -207,85 +187,75 @@ int main() {
 }
 ```
 
-4. **PBL:** Martin spørger: *"Kan you also print the BMI category for each patient?"*
+4. **PBL:** Martin spørger: *"Kan du også udskrive BMI-kategorien for hver patient?"*
 
 **Hint:**
-- Remember function declaration og definition of `printPatientInfo`
+- Husk funktionsdeklarationen og -definitionen af `printPatientInfo`
 - Beregn BMI: `bmi = calculateBMI(heights[i], weights[i])`
-- Udskriv BMI with: `printf(" BMI:\t\t%.1f\n", bmi);`
-
-**Hvad du aldrig må gøre:**
-- Beregn BMI i main
-- Glem til call calculateBMI
-- Glem til print BMI
+- Udskriv BMI med: `printf(" BMI:\t\t%.1f\n", bmi);`
 
 ---
 
-## Question: Records Display - Call-by-Reference
+## Spørgsmål: Records - Udskrivning med call-by-reference
 
-**Short Humorous Scenario:**
-Martin ønsker at print struct data using a function. *"Jeg har a Record struct with id, date, notes, og measurement. Kan you make a function that prints it?"* han spørger.
+**Scenarie:**
+Martin vil gerne udskrive data fra en struct ved hjælp af en funktion. *"Jeg har en Record-struct med id, dato, noter og en måling. Kan du lave en funktion, der udskriver den?"* spørger han.
 
-**Hvad de allerede ved:**
-- Struct definition
-- Funktion parameters (call-by-reference)
-- `ctime()` function for date formatting
+**Hvad du allerede ved:**
+- Struct-definition
+- Funktionsparametre (call-by-reference)
+- `ctime()`-funktionen til formatering af datoer
 - Pointers til structs
 
 **Opgaven:**
 
-1. Definer en struct template for `Record` der indeholder:
+1. Definer en struct-skabelon `Record`, der indeholder:
    - `id`: integer
    - `dato`: `time_t`
-   - `notes`: 100 char string
+   - `notes`: string på 100 char
    - `measurement`: float
-2. Lav function declaration og definition `print_record(Record *)` (call-by-reference)
-3. The function should:
-   - Udskriv a readable date from `dato` (see `ctime(t)`)
-   - Example output for 1594974180: `date: Fri Jul 17 10:23:00 2020`
-   - Udskriv all other information
-4. In `main`, define:
+2. Lav funktionsdeklarationen og -definitionen `print_record(Record *)` (call-by-reference)
+3. Funktionen skal:
+   - Udskrive en læsbar dato ud fra `dato` (se `ctime(t)`)
+   - Eksempel på output for 1594974180: `date: Fri Jul 17 10:23:00 2020`
+   - Udskrive alle de øvrige oplysninger
+4. Definer følgende i `main`:
    ```c
    struct Record rec = {131, 1594974180, "Measurement recorded without issues", 93.3};
    ```
-5. Kald `print_record` with `rec` as call-by-reference
-6. Kør program
+5. Kald `print_record` med `rec` som call-by-reference
+6. Kør programmet
 
-7. **PBL:** Martin spørger: *"Kan you extend this til print multiple records from an array?"*
+7. **PBL:** Martin spørger: *"Kan du udvide det, så det udskriver flere records fra et array?"*
 
 **Hint:**
-- Pass struct address: `&rec` or `&rec`
-- Brug `ctime(&record.dato)` til get readable date
-- Inkluder `time.h` for `ctime()`
-- Funktion signature: `void print_record(struct Record *r)`
-
-**Hvad du aldrig må gøre:**
-- Pass struct by value (makes a copy)
-- Glem til include time.h
-- Glem & when passing struct
+- Send structens adresse: `&rec`
+- Brug `ctime(&record.dato)` til at få en læsbar dato
+- Inkluder `time.h` for at bruge `ctime()`
+- Funktionssignatur: `void print_record(struct Record *r)`
 
 ---
 
-## Question: Patient 3 - Statistics Functions
+## Spørgsmål: Patient 3 - Statistikfunktioner
 
-**Short Humorous Scenario:**
-Martin ønsker at calculate statistics for multiple patients. *"Jeg skal mean og standard deviation functions. Kan you make them reusable?"* han spørger.
+**Scenarie:**
+Martin vil gerne beregne statistik for flere patienter. *"Jeg har brug for funktioner til gennemsnit og standardafvigelse. Kan du lave dem, så de kan genbruges?"* spørger han.
 
-**Hvad de allerede ved:**
+**Hvad du allerede ved:**
 - Arrays
-- Functions
+- Funktioner
 - Loops
-- Statistical formulas
-- Math library
+- Statistiske formler
+- Matematikbiblioteket
 
 **Opgaven:**
 
-1. Skriv function `printStatistics(char* measurement, float gennemsnit, float afvigelse)` - it should print measurement, mean, og std
-2. Skriv function `float mean(float x[], int n)` - calculates mean $\mu = \frac{1}{N} \sum\_{t=0}^{n-1} x_t$
-3. Skriv function `float std(float x[], int n)` - calculates std $\sigma = \sqrt{\frac{1}{N-1} \sum\_{t=0}^{n-1} (x_t - \mu)^2}$
-4. Skriv og use `printStatistics` function
+1. Skriv funktionen `printStatistics(char* measurement, float gennemsnit, float afvigelse)` - den skal udskrive målingens navn, gennemsnit og standardafvigelse
+2. Skriv funktionen `float mean(float x[], int n)` - beregner gennemsnittet $\mu = \frac{1}{N} \sum\_{t=0}^{n-1} x_t$
+3. Skriv funktionen `float std(float x[], int n)` - beregner standardafvigelsen $\sigma = \sqrt{\frac{1}{N-1} \sum\_{t=0}^{n-1} (x_t - \mu)^2}$
+4. Brug funktionen `printStatistics`
 
-Starting code:
+Startkode:
 ```c
 #include <stdio.h>
 int main() {
@@ -298,15 +268,10 @@ int main() {
 }
 ```
 
-5. **PBL:** Martin spørger: *"Kan you modify this til calculate og print statistics for all three measurements (age, weight, height) in one loop?"*
+5. **PBL:** Martin spørger: *"Kan du ændre det, så det beregner og udskriver statistik for alle tre målinger (alder, vægt og højde) i ét loop?"*
 
 **Hint:**
-- You've made these equations before
-- Mean: $\mu = \frac{1}{N} \sum x_t$
-- Std: $\sigma = \sqrt{\frac{1}{N-1} \sum (x_t - \mu)^2}$
-- Husk at inkludere `<math.h>` for `sqrt()`
-
-**Hvad du aldrig må gøre:**
-- Brug N instead of N-1 for std
-- Glem til include math.h
-- Beregn mean/std incorrectly
+- Du har lavet disse ligninger før
+- Gennemsnit: $\mu = \frac{1}{N} \sum x_t$
+- Standardafvigelse: $\sigma = \sqrt{\frac{1}{N-1} \sum (x_t - \mu)^2}$
+- Husk at inkludere `<math.h>` for at bruge `sqrt()`
